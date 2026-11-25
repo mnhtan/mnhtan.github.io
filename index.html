@@ -1,29 +1,222 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-
 <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#3b82f6" />
-    <meta name="description"
-        content="Portfolio của Phan Minh Tân - AI Engineer Intern chuyên về Computer Vision và Machine Learning" />
-    <link rel="apple-touch-icon" href="/logo192.png" />
-    <link rel="manifest" href="/manifest.json" />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
-    <title>Phan Minh Tân - AI Engineer Intern</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio Phan Minh Tân. Thử demo Sales Tech và xem các dự án Data &amp; AI.">
+  <meta name="theme-color" content="#0d1211">
+  <title>Phan Minh Tân · Sales Tech, Data &amp; AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/portfolio-design-assets/analyst-portfolio.css">
 </head>
-
 <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <script type="module" src="/src/index.tsx"></script>
-</body>
+  <a class="skip" href="#noi-dung">Đến nội dung</a>
+  <header class="site-header">
+    <div class="wrap navigation">
+      <a class="wordmark" href="#noi-dung">Phan Minh Tân<span>.</span></a>
+      <nav aria-label="Điều hướng chính">
+        <a href="#sales-demo">Demo sales</a>
+        <a href="#du-an">Dự án</a>
+        <a href="#nen-tang">Nền tảng</a>
+        <a href="#lien-he">Liên hệ ↗</a>
+      </nav>
+    </div>
+  </header>
 
+  <main id="noi-dung">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="wrap intro">
+        <p class="mono role">SALES TECH · DATA &amp; AI</p>
+        <h1 id="page-title">Từ bài toán sales<br>đến <em>công cụ.</em></h1>
+        <p class="lead">Tôi bán giải pháp CNTT và xây công cụ giúp đội sales quản lý khách hàng, báo giá và theo dõi công việc.</p>
+        <a class="button" href="#sales-demo">Thử demo sales <span aria-hidden="true">↘</span></a>
+      </div>
+
+      <div class="exhibit" id="exhibit" data-scene="sales">
+        <canvas id="space" aria-hidden="true"></canvas>
+        <div class="scene-art" id="scene-art">
+          <div class="screen">
+            <img id="scene-image" hidden src="/portfolio-design-assets/traffic-detection-demo.png" width="1916" height="951" alt="Ứng dụng nhận diện phương tiện trong đề tài YOLOv8">
+            <div id="scene-sales" class="scene-sales" aria-hidden="true">
+              <strong>Bàn làm việc<br>của AM<span>.</span></strong>
+              <div class="scene-sales-steps"><span>KHÁCH HÀNG</span><span>BÁO GIÁ</span><span>THEO DÕI</span></div>
+              <div class="scene-sales-rows"><i></i><i></i><i></i></div>
+            </div>
+            <div id="scene-chart" class="scene-chart" hidden>
+              <strong>28,5%</strong><span>Tỷ lệ khách rời dịch vụ</span>
+              <div class="slabs" aria-hidden="true"><i style="--height:87%"></i><i style="--height:48%"></i><i style="--height:19%"></i><i style="--height:23%"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="exhibit-bar">
+          <div class="scene-choices" role="group" aria-label="Đổi dự án đang trưng bày">
+            <button type="button" data-scene="sales" aria-pressed="true">Sales</button>
+            <button type="button" data-scene="vision" aria-pressed="false">YOLOv8</button>
+            <button type="button" data-scene="bi" aria-pressed="false">Power BI</button>
+            <button type="button" data-scene="python" aria-pressed="false">Fit.ly</button>
+          </div>
+          <a id="scene-link" href="#sales-demo">Thử quy trình <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sales wrap" id="sales-demo" aria-labelledby="sales-title">
+      <div class="sales-heading">
+        <div>
+          <p class="mono category">DEMO CHÍNH · SALES TECH</p>
+          <h2 id="sales-title">Một lượt xử lý khách hàng.</h2>
+          <p>Tôi gặp bài toán khi tư vấn giải pháp CNTT, rồi xây công cụ để theo dõi khách, so sánh báo giá và chốt bước tiếp theo.</p>
+        </div>
+        <span class="sales-badge">Dữ liệu giả lập</span>
+      </div>
+
+      <div class="sales-console">
+        <div class="sales-toolbar">
+          <strong>Bàn làm việc của AM</strong>
+          <p id="sales-count" role="status">4 khách mẫu · 3 cần xử lý</p>
+          <button class="plain-button" id="sales-reset" type="button">Đặt lại demo</button>
+        </div>
+        <div class="sales-workspace">
+          <div class="sales-inbox">
+            <h3>1. Chọn khách</h3>
+            <div class="toggle-group" role="group" aria-label="Lọc danh sách khách">
+              <button type="button" data-sales-filter="all" aria-pressed="true">Tất cả</button>
+              <button type="button" data-sales-filter="due" aria-pressed="false">Cần xử lý</button>
+            </div>
+            <ul class="sales-list" id="sales-list" aria-label="Khách hàng mẫu">
+              <li><button type="button" data-account="a" aria-pressed="true"><strong>Cửa hàng mẫu A</strong><span>Quá hạn 1 ngày</span></button></li>
+              <li><button type="button" data-account="b" aria-pressed="false"><strong>Văn phòng mẫu B</strong><span>Đến hạn hôm nay</span></button></li>
+              <li><button type="button" data-account="c" aria-pressed="false"><strong>Trung tâm mẫu C</strong><span>Còn 2 ngày</span></button></li>
+              <li><button type="button" data-account="d" aria-pressed="false"><strong>Cửa hàng mẫu D</strong><span>Còn 7 ngày</span></button></li>
+            </ul>
+            <p id="sales-empty" hidden>Đã xử lý hết việc cần ưu tiên. Chọn “Tất cả” để xem danh sách.</p>
+          </div>
+
+          <div class="sales-detail" id="sales-detail">
+            <div class="sales-detail-heading">
+              <div>
+                <p class="mono category" id="sales-need">Thanh toán tại quầy</p>
+                <h3 id="sales-account">Cửa hàng mẫu A</h3>
+              </div>
+              <span id="sales-timing" class="sales-badge">Quá hạn 1 ngày</span>
+            </div>
+            <p class="sales-next" id="sales-next">Bước tiếp theo · Gửi phương án thanh toán tại quầy.</p>
+            <h4>2. So sánh phương án <small>Giá mẫu · chưa VAT</small></h4>
+            <div class="sales-options" role="group" aria-label="Chọn phương án báo giá">
+              <button type="button" data-plan="0" aria-pressed="true"><span>Cơ bản</span><strong></strong></button>
+              <button type="button" data-plan="1" aria-pressed="false"><span>Tiêu chuẩn</span><strong></strong></button>
+              <button type="button" data-plan="2" aria-pressed="false"><span>Mở rộng</span><strong></strong></button>
+            </div>
+            <div class="sales-total" aria-live="polite"><span>Tạm tính phương án chọn</span><strong id="sales-total"></strong></div>
+            <h4>3. Ghi nhận bước tiếp theo</h4>
+            <button class="button sales-submit" id="sales-submit" type="button">Ghi nhận đã chuẩn bị báo giá <span aria-hidden="true">✓</span></button>
+          </div>
+        </div>
+        <p class="sales-feedback" id="sales-feedback" role="status" tabindex="-1"></p>
+        <noscript><p class="sales-feedback">Bật JavaScript để thử thao tác trên dữ liệu mẫu.</p></noscript>
+      </div>
+
+      <div class="sales-history">
+        <h3>Từ cuộc gặp đến công cụ</h3>
+        <ol>
+          <li><time datetime="2026-08">Tháng 08</time><strong>Trang tư vấn sản phẩm</strong><span>Landing page Tendoo và video hướng dẫn.</span><a href="https://github.com/mnhtan/tendoo-voice-payment-landing-page/commit/928d3a2">Xem commit ↗</a></li>
+          <li><time datetime="2026-10">Tháng 10</time><strong>Theo dõi công việc</strong><span>Luồng dự án, bộ lọc và báo cáo CSV/Excel.</span></li>
+          <li><time datetime="2026-11">Tháng 11</time><strong>Quản lý khách hàng</strong><span>AMHub, nhập KPI từ bảng tính và danh sách khách cần chăm sóc.</span></li>
+          <li><time datetime="2026-11">Tháng 11</time><strong>Chuẩn bị báo giá</strong><span>So sánh ba phương án và chuẩn hóa bản in.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <dl class="proof" aria-label="Số liệu từ các dự án">
+      <div><dt>Ảnh trong bộ dữ liệu đề tài</dt><dd>5.412</dd><a href="#thi-giac">Computer Vision ↘</a></div>
+      <div><dt>mAP50–95 của YOLOv8m</dt><dd>80,4%</dd><a href="#thi-giac">Kết quả trong báo cáo đề tài ↘</a></div>
+      <div><dt>Tỷ lệ khách rời dịch vụ</dt><dd>28,5%</dd><a href="#fitly">Bộ dữ liệu bài tập Fit.ly ↘</a></div>
+    </dl>
+
+    <section class="wrap projects" id="du-an" aria-labelledby="projects-title">
+      <div class="section-title">
+        <h2 id="projects-title">Dự án chọn lọc</h2>
+        <button id="motion-control" class="plain-button" type="button" hidden>Tạm dừng chuyển động</button>
+      </div>
+
+      <article class="case vision" id="thi-giac">
+        <figure class="project-plane">
+          <img src="/portfolio-design-assets/traffic-detection-demo.png" width="1916" height="951" loading="lazy" alt="Ảnh thật của ứng dụng Streamlit hiển thị kết quả phát hiện phương tiện">
+        </figure>
+        <div class="case-body">
+          <p class="mono category">COMPUTER VISION · ĐỀ TÀI NHÓM</p>
+          <h3>Đếm xe từ video.</h3>
+          <p>Phần tôi tham gia: chuẩn bị ảnh, huấn luyện YOLOv8, so sánh trình theo dõi và xây ứng dụng Streamlit.</p>
+          <div class="toggle-group" role="group" aria-label="So sánh mô hình YOLOv8">
+            <button type="button" data-model="nano" aria-pressed="false">YOLOv8n</button>
+            <button type="button" data-model="medium" aria-pressed="true">YOLOv8m</button>
+          </div>
+          <dl class="comparison" aria-live="polite">
+            <div><dt>mAP50–95</dt><dd id="model-score">80,4%</dd></div>
+            <div><dt>Độ trễ CPU · PyTorch</dt><dd id="model-latency">1.103,60 ms</dd></div>
+          </dl>
+          <a class="text-link" href="https://github.com/mnhtan/intelligent-traffic-flow-monitoring-yolov8">Mã nguồn và kết quả đề tài ↗</a>
+        </div>
+      </article>
+
+      <div class="case-pair">
+        <article class="case small-case" id="power-bi">
+          <p class="mono category">POWER BI · DAX</p>
+          <h3>Thị trường nào đáng ưu tiên?</h3>
+          <figure class="project-plane">
+            <img src="/portfolio-design-assets/superstore-overview.png" width="1316" height="738" loading="lazy" alt="Dashboard Global Superstore hiển thị doanh thu, lợi nhuận và tỷ lệ hoàn hàng">
+          </figure>
+          <p>Global Superstore · Doanh thu, biên lợi nhuận, hoàn hàng.</p>
+          <a class="text-link" href="https://github.com/mnhtan/powerbi-global-superstore-sales-performance">Xem dashboard và cách làm ↗</a>
+        </article>
+
+        <article class="case small-case" id="fitly">
+          <p class="mono category">PYTHON · PANDAS</p>
+          <h3>Mất bao nhiêu khách và doanh thu?</h3>
+          <div class="fit-chart project-plane" aria-label="Biểu đồ tỷ lệ khách rời theo số lần sử dụng">
+            <div class="fit-number" aria-live="polite"><strong id="fit-score">28,5%</strong><span id="fit-label">Khách rời dịch vụ</span></div>
+            <div class="bars">
+              <div><span>0</span><i style="--value:53.9%"></i><b>53,9%</b></div>
+              <div><span>1</span><i style="--value:21.4%"></i><b>21,4%</b></div>
+              <div><span>2–3</span><i style="--value:5%"></i><b>5,0%</b></div>
+              <div><span>4+</span><i style="--value:7.1%"></i><b>7,1%</b></div>
+            </div>
+          </div>
+          <p>Fit.ly · Bài tập phân tích churn. Biểu đồ theo số lần sử dụng.</p>
+          <div class="toggle-group" role="group" aria-label="Chọn cách đo churn">
+            <button type="button" data-fit="count" aria-pressed="true">Theo khách</button>
+            <button type="button" data-fit="revenue" aria-pressed="false">Theo doanh thu</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="further" aria-label="Dự án kỹ thuật khác">
+        <a href="https://github.com/mnhtan/sql-bigquery-google-analytics-ecommerce"><span class="mono">SQL / BIGQUERY</span><strong>Phễu mua hàng Google Analytics</strong><span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/mnhtan/bank-marketing-campaign-response-prediction/blob/main/bank_marketing_campaign_prediction.ipynb"><span class="mono">MACHINE LEARNING</span><strong>Dự đoán phản hồi chiến dịch ngân hàng</strong><span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="background" id="nen-tang" aria-labelledby="background-title">
+      <div class="wrap foundation">
+        <h2 id="background-title">Nền tảng của tôi</h2>
+        <div class="career-grid">
+          <article class="career-card"><span class="mono">CÔNG VIỆC</span><h3>Viettel</h3><p>Bán giải pháp CNTT. Luyện cách hỏi, trình bày và xử lý vấn đề với nhiều nhóm người.</p></article>
+          <article class="career-card"><span class="mono">DATA ENGINEERING</span><h3>TK Ventures</h3><p>Tự động thu thập tin từ RSS theo từ khóa và chuẩn hóa thành bảng có thể tra cứu.</p></article>
+          <article class="career-card"><span class="mono">ĐÀO TẠO</span><h3>HUFLIT &amp; UniGap</h3><p>Khoa học dữ liệu, đề tài Computer Vision và tư duy hệ thống trong khóa Data Analyst.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="lien-he">
+    <div class="wrap closing">
+      <h2>Trao đổi về Data &amp; AI.</h2>
+      <div><a href="mailto:mtann0603@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/mtann/">LinkedIn ↗</a><a href="https://github.com/mnhtan">GitHub ↗</a></div>
+    </div>
+  </footer>
+  <script type="module" src="/portfolio-design-assets/analyst-portfolio.js"></script>
+  <script type="module" src="/portfolio-design-assets/sales-demo.js"></script>
+</body>
 </html>
